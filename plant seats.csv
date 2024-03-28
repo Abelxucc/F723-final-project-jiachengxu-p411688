@@ -1,1 +1,7 @@
-﻿
+﻿seats,1A（F）,2A（F）,3A（F）,4A（F）,78A（F）,79A（F）,80A（F）,81A（F）
+seats,1B（F）,2B（F）,3B（F）,4B（F）,78B（F）,79B（F）,80B（F）,81B（F）
+seats,1C（F）,2C（F）,3C（F）,4C（F）,78C（F）,79C（F）,80C（F）,81C（F）
+aisle,X,X,X,X,X,X,X,X
+seats,1D（F）,2D（F）,3D（F）,4D（F）,S,S,79D（F）,80D（F）
+seats,1E（F）,2E（F）,3E（F）,4E（F）,S,S,79E（F）,80E（F）
+seats,2D（F）,3D（F）,4D（F）,5D（F）,S,S,79F（F）,80F（F）
