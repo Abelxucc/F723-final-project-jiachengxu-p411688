@@ -49,21 +49,21 @@ def main_menu(csv_file_path):
         choice = input("Choose an option: ")
 
         if choice == '1':
-            seat_label = input("Enter seat label (e.g., '1A'): ")
+            seat_label = input("Enter seat label (e.g., '1A'): ").upper()
             if booking_system.check_availability(seat_label):
                 print("The seat is available.")
             else:
                 print("The seat is not available or does not exist.")
 
         elif choice == '2':
-            seat_label = input("Enter seat label (e.g., '1A'): ")
+            seat_label = input("Enter seat label (e.g., '1A'): ").upper()
             if booking_system.book_seat(seat_label):
                 print("The seat has been booked.")
             else:
                 print("The seat cannot be booked or does not exist.")
 
         elif choice == '3':
-            seat_label = input("Enter seat label (e.g., '1A'): ")
+            seat_label = input("Enter seat label (e.g., '1A'): ").upper()
             if booking_system.free_seat(seat_label):
                 print("The seat has been freed.")
             else:
