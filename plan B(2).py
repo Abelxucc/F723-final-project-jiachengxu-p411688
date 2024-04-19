@@ -18,7 +18,10 @@ class BookingReferenceGenerator:
 class SeatBooking:
     def __init__(self, csv_file_path):
         self.csv_file_path = csv_file_path
-        self.seats = pd.read_csv(csv_file_path, index_col='seats')
+        self.seats = pd.read_csv(csv_file_path)
+        if 'reference' not in self.seats.columns:
+            self.seats['reference'] = ''
+        self.seats.set_index('seats', inplace=True)
         self.reference_generator = BookingReferenceGenerator()
         self.booking_details = {}  # New attribute to store booking details
 
@@ -33,11 +36,12 @@ class SeatBooking:
             self.seats.at[seat_label, 'Status'] = 'R'
             self.seats.at[seat_label, 'CustomerName'] = customer_data['name']
             self.seats.at[seat_label, 'CustomerEmail'] = customer_data['email']
+            self.seats.at[seat_label, 'reference'] = reference
             self.booking_details[seat_label] = {
                 'reference': reference,
                 'customer_data': customer_data
             }
-            self.seats.to_csv(self.csv_file_path)
+            self.seats.to_csv(self.csv_file_path)  # 写入CSV文件
             print(f"Booking complete. Reference: {reference}")
             return True
         else:
